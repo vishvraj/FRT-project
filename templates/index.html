@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  
+<head>
+    <title>
+        How to specify the URL of
+        the image to use as a
+        submit button in HTML ?
+    </title>
+</head>
+  
+<body style="text-align:center;">
+  
+    <h1 style="color:rgb(30, 49, 226);font-size:80px;">
+       Get Information
+    </h1>
+  
+    <h3 style="color:rgb(18, 19, 20);font-size:40px;">
+        To get information about the contents in a picture.<br><br>
+        Submit the Url here.
+    </h3>
+  
+    <form action="/imgurl/" method="post">
+                    {% csrf_token %}
+        Image Url: <input type="text" name="url" value="{{url}}" >
+
+        <button type="submit" name="btn" value="submit" >Get Info</button>
+
+    </form>
+
+            <center>
+            <img src="{{url}}" class="mt-5 pt-5 img-fluido" alt="Responsive image">
+            <p> <Strong> DESCRIPTION : </Strong>{{text}} </p>
+            <p>
+            <Strong> TAGS : </Strong>
+            {{tags}}
+            </p>
+            </center>
+</body>
+  
+</html>
